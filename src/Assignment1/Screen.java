@@ -4,9 +4,7 @@ import Assignment1.Drink.*;
 import Assignment1.Food.*;
 import Assignment1.Goods.*;
 
-import java.sql.SQLOutput;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class Screen {
