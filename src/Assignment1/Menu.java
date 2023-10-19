@@ -1,15 +1,15 @@
 package Assignment1;
 
-public abstract class Menu {
+public class Menu {
     private String name;
     private int price;
-    private String explain;
+    private String description;
     private int num;
 
-    public Menu(String name, int price, String explain){
+    public Menu(String name, int price, String description){
         this.name = name;
         this.price = price;
-        this.explain = explain;
+        this.description = description;
         this.num=1;
     }
     public String getName() {
@@ -18,11 +18,10 @@ public abstract class Menu {
     public int getPrice() {
         return price;
     }
-    public String getExplain() {
-        return explain;
+    public String getDescription() {
+        return description;
     }
     public int getNum() { return num; }
-
     public void setNum(int num){
         this.num = num;
     }

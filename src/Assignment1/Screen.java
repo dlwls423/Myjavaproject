@@ -57,7 +57,7 @@ public class Screen {
         else if(channel == 2) System.out.println("[ FOODS ]");
         else System.out.println("[ GOODS ]");
         for(int i=0; i<4; i++) {
-            System.out.println(i + 1 + ". " + order.getMenus(channel-1,i).getName() + "\t| W " + order.getMenus(channel-1,i).getPrice() + " | " + order.getMenus(channel-1,i).getExplain());
+            System.out.println(i + 1 + ". " + order.getMenus(channel-1,i).getName() + "\t| W " + order.getMenus(channel-1,i).getPrice() + " | " + order.getMenus(channel-1,i).getDescription());
         }
         System.out.println();
         int item = sc.nextInt();
@@ -68,7 +68,7 @@ public class Screen {
         return item;
     }
     public void putin(int item){
-        System.out.println("\""+order.getMenus(status-1,item-1).getName()+"\t| W "+order.getMenus(status-1,item-1).getPrice()+" | " + order.getMenus(status-1,item-1).getExplain()+"\"");
+        System.out.println("\""+order.getMenus(status-1,item-1).getName()+"\t| W "+order.getMenus(status-1,item-1).getPrice()+" | " + order.getMenus(status-1,item-1).getDescription()+"\"");
         System.out.println("위 메뉴를 장바구니에 추가하시겠습니까?");
         System.out.println("1. 확인 \t2. 취소");
         int check = sc.nextInt();
@@ -87,7 +87,7 @@ public class Screen {
             System.out.println();
             System.out.println("[ Orders ]");
             for (int i=0;i< order.getOrdersSize();i++) {
-                System.out.printf("%-8s | W %-6d | %-2d개 | %-25s\n", order.getOrders(i).getName(), order.getOrders(i).getPrice() * order.getOrders(i).getNum(), order.getOrders(i).getNum(), order.getOrders(i).getExplain());
+                System.out.printf("%-8s | W %-6d | %-2d개 | %-25s\n", order.getOrders(i).getName(), order.getOrders(i).getPrice() * order.getOrders(i).getNum(), order.getOrders(i).getNum(), order.getOrders(i).getDescription());
             }
             System.out.println();
             System.out.println("[ Total ]");

@@ -22,7 +22,7 @@ public class Order {
     private ArrayList<Menu> orders = new ArrayList<>();
     private ArrayList<Menu> total_orders = new ArrayList<>();
     private static int total_sale = 0; //판매한 총 가격
-    private static int total_price = 0; //SetOrder를 만나기 전까지의 주문 개수와 가격 합
+    private static int total_price = 0; //장바구니의 주문 개수와 가격 합
     private static int total_num = 0;
 
     public Menu getMenus(int i, int j){
