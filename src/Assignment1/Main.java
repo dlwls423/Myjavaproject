@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Screen screen = new Screen();
+        Order.setTotal_sale();
         int wait=0;
 
         while (true){
