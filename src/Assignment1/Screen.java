@@ -79,7 +79,6 @@ public class Screen {
         }
         else System.out.println("진행하던 주문이 취소되었습니다.");
     }
-
     public int order(int wait){
         int order_num = Order.getTotal_num();
         if(order_num == 0) System.out.println("장바구니가 비었습니다.");
