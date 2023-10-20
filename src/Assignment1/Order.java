@@ -1,11 +1,9 @@
 package Assignment1;
 
-import java.util.ArrayList;
-
 public class Order {
     private int num;
-    private int size; //없으면 0-drinkOrNot으로 판단, Tall이면 0, Grande이면 1, Venti이면 2
-    private int final_price;
+    private int size; //없으면 0, Tall이면 0, Grande이면 1, Venti이면 2
+    private int final_price; //기존 price + 500*size
     private Product product;
 
     public Order(Product product, int num, int size) {

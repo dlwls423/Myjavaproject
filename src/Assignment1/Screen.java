@@ -95,7 +95,7 @@ public class Screen {
         }
         System.out.println();
         int item = sc.nextInt();
-        while(item<=0 || item >=5){
+        while(item<1 || item >4){
             System.out.println("다시 입력해 주세요.");
             item = sc.nextInt();
         }
@@ -156,7 +156,7 @@ public class Screen {
             System.out.println("메뉴를 담아주세요.");
             pay = 3;
         }
-        while(pay<=0 || pay >=3){
+        while(pay!=1 && pay!=2){
             System.out.println("다시 입력해 주세요.");
             pay = sc.nextInt();
         }
@@ -182,7 +182,7 @@ public class Screen {
         System.out.println("진행하던 주문을 취소하시겠습니까?");
         System.out.println("1. 확인\t2. 취소");
         int check = sc.nextInt();
-        while(check<=0 || check >=3){
+        while(check!=1 && check !=2){
             System.out.println("다시 입력해 주세요.");
             check = sc.nextInt();
         }
