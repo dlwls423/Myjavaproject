@@ -4,24 +4,27 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
         Screen screen = new Screen();
-        Order.setTotal_sale();
-        int wait=0;
 
         while (true){
-            int channel = screen.main();
+            screen.main();
+            int channel = sc.nextInt();
+            while (channel < 0 || channel > 5) {
+                System.out.println("다시 입력해 주세요.");
+                channel = sc.nextInt();
+            }
 
             if(channel == 0){
                 screen.owner();
             }
 
             else if(channel >=1 && channel <=3){
-                int item = screen.sale(channel);
-                screen.putin(item);
+                screen.sale(channel);
             }
 
             else if(channel == 4){
-                wait = screen.order(wait);
+                screen.order();
             }
 
             else if(channel == 5){
