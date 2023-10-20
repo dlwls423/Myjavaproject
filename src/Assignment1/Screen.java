@@ -71,7 +71,7 @@ public class Screen {
         for (Order totalOrder : total_orders) {
             Product product = totalOrder.getProduct();
             for(int i=0;i<totalOrder.getNum();i++)
-                System.out.printf("- %-3s(%-3s) | W %-6d\n", product.getName(), sizeName[totalOrder.getSize()], product.getPrice()+500*totalOrder.getSize());
+                System.out.printf("- %-3s(%-3s) | W %-6d\n", product.getName(), sizeName[totalOrder.getSize()], totalOrder.getFinal_price());
         }
         System.out.println();
         System.out.println("1. 돌아가기");
@@ -117,8 +117,7 @@ public class Screen {
         int check = sc.nextInt();
         if(check == 1){
             Order order = new Order(menus[channel - 1].get(item-1), 1, size);
-            total_price += order.getProduct().getPrice() + (size)*500;
-            System.out.println("size: "+size+"total_price: "+ total_price);
+            total_price += order.getFinal_price();
             int flag = 0;
             for (Order value : bucket) {
                 if (value.getProduct().equals(order.getProduct()) && value.getSize() == order.getSize()){
@@ -143,7 +142,7 @@ public class Screen {
             System.out.println("[ Orders ]");
             for (int i=0;i< order_num;i++) {
                 Product product = bucket.get(i).getProduct(); // 장바구니 상품
-                if(product.isDrinkOrNot()) System.out.printf("%-3s(%-3s) | W %-6d | %-2d개 | %-25s\n", product.getName(), sizeName[bucket.get(i).getSize()], product.getPrice()+(bucket.get(i).getSize())*500, bucket.get(i).getNum(), product.getDescription());
+                if(product.isDrinkOrNot()) System.out.printf("%-3s(%-3s) | W %-6d | %-2d개 | %-25s\n", product.getName(), sizeName[bucket.get(i).getSize()], bucket.get(i).getFinal_price(), bucket.get(i).getNum(), product.getDescription());
                 else System.out.printf("%-8s | W %-6d | %-2d개 | %-25s\n", product.getName(), product.getPrice(), bucket.get(i).getNum(), product.getDescription());
             }
             System.out.println();
