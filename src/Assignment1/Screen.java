@@ -46,7 +46,7 @@ public class Screen {
         menus[1] = foods;
         menus[2] = goods;
     }
-    public void main(){
+    public int mainScreen() throws Exception{
         System.out.println("\"Starbucks에 오신걸 환영합니다.\"");
         System.out.println("원하시는 항목을 입력해주세요.");
         System.out.println();
@@ -59,9 +59,15 @@ public class Screen {
         System.out.println("4. Order\t| 장바구니 확인 후 주문합니다. ");
         System.out.println("5. Cancel\t| 진행중인 주문을 취소합니다.");
         System.out.println();
+        int channel = sc.nextInt();
+        while (channel < 0 || channel > 5) {
+            System.out.println("다시 입력해 주세요.");
+            channel = sc.nextInt();
+        }
+        return channel;
     }
 
-    public void owner(){
+    public void owner() throws Exception{
         System.out.println("[ 총 판매금액 현황 ]");
         System.out.println("현재까지 총 판매된 금액은 [ W " + total_sale + " ] 입니다.");
         System.out.println();
@@ -82,7 +88,7 @@ public class Screen {
             check = sc.nextInt();
         }
     }
-    public void sale(int channel){
+    public void sale(int channel) throws Exception{
         System.out.println("\"Starbucks에 오신걸 환영합니다.\"");
         System.out.println("아래 메뉴판을 보시고 메뉴를 골라 입력해주세요.");
         System.out.println();
@@ -133,7 +139,7 @@ public class Screen {
         }
         else System.out.println("진행하던 주문이 취소되었습니다.");
     }
-    public void order(){
+    public void order() throws Exception{
         int order_num = bucket.size();
         if(order_num == 0) System.out.println("장바구니가 비었습니다.");
         else{
@@ -178,7 +184,7 @@ public class Screen {
         }
     }
 
-    public void set(){
+    public void set() throws Exception{
         System.out.println("진행하던 주문을 취소하시겠습니까?");
         System.out.println("1. 확인\t2. 취소");
         int check = sc.nextInt();

@@ -8,27 +8,20 @@ public class Main {
         Screen screen = new Screen();
 
         while (true){
-            screen.main();
-            int channel = sc.nextInt();
-            while (channel < 0 || channel > 5) {
-                System.out.println("다시 입력해 주세요.");
-                channel = sc.nextInt();
-            }
-
-            if(channel == 0){
-                screen.owner();
-            }
-
-            else if(channel >=1 && channel <=3){
-                screen.sale(channel);
-            }
-
-            else if(channel == 4){
-                screen.order();
-            }
-
-            else if(channel == 5){
-                screen.set();
+            try{
+                int channel = screen.mainScreen();
+                if (channel == 0) {
+                    screen.owner();
+                } else if (channel >= 1 && channel <= 3) {
+                    screen.sale(channel);
+                } else if (channel == 4) {
+                    screen.order();
+                } else if (channel == 5) {
+                    screen.set();
+                }
+            } catch (Exception e){
+                System.out.println("잘못된 입력입니다!");
+                break;
             }
         }
     }
