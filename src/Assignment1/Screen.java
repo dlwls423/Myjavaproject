@@ -149,7 +149,7 @@ public class Screen {
             for (int i=0;i< order_num;i++) {
                 Product product = bucket.get(i).getProduct(); // 장바구니 상품
                 if(product.isDrinkOrNot()) System.out.printf("%-3s(%-3s) | W %-6d | %-2d개 | %-25s\n", product.getName(), sizeName[bucket.get(i).getSize()], bucket.get(i).getFinal_price(), bucket.get(i).getNum(), product.getDescription());
-                else System.out.printf("%-8s | W %-6d | %-2d개 | %-25s\n", product.getName(), product.getPrice(), bucket.get(i).getNum(), product.getDescription());
+                else System.out.printf("%-8s | W %-6d | %-2d개 | %-25s\n", product.getName(), bucket.get(i).getFinal_price(), bucket.get(i).getNum(), product.getDescription());
             }
             System.out.println();
             System.out.println("[ Total ]");
